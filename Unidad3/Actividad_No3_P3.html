@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Llenar el Title y los Metadatos-->
+        <title>Unidad 3 | Actividad 03</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+        <meta charset="utf-8"> <!--Juego de caracteres-->
+        <meta name="Autor" content="Saori Nayelli Jasso Pelayo">
+        <meta name="Fecha" content="30 de abril de 2025">
+        <meta name="Descripción" content="JavaScript">
+    </head>
+
+    <body>
+        <!--Llenar el Título y pegar el contenido-->
+        <h1>Unidad 3 | Actividad 03 :: Tema (JavaScript)</h1>
+        <script>
+            let opc= window.prompt("Menú de opciones:\n1. Sumar\n2. Restar\n3. Multiplicar\n4. Dividir\nQué opción deseas realizar?");
+            let val_1 = Number(window.prompt(" Dame el primer valor: "));
+            let val_2 = Number(window.prompt(" Dame el segundo valor: "));
+            switch(opc){
+                case "1": 
+                    document.write("<h3>Operación Suma</h3>"); 
+                    document.write("<code>" + val_1 + " + " + val_2 + " = " + (val_1+val_2)+"</code>"); 
+                break;
+                case "2": 
+                    document.write("<h3>Operación Resta</h3>"); 
+                    document.write("<code>" + val_1 + " - " + val_2 + " = " + (val_1-val_2)+"</code>");
+                break;
+                case "3": 
+                    document.write("<h3>Operación Multiplica</h3>"); 
+                    document.write("<code>" + val_1 + " x " + val_2 + " = " + (val_1*val_2)+"</code>");
+                break;
+                case "4": 
+                    document.write("<h3>Operación Divide</h3>"); 
+                    document.write("<code>" + val_1 + " ÷ " + val_2 + " = " + (val_1/val_2)+"</code>");
+                break;
+            }
+        </script>
+    </body>
+
+</html>
