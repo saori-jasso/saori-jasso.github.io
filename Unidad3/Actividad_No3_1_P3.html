@@ -1,80 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <!--Llenar el Title y los Metadatos-->
-        <title>Unidad 3 | Actividad 3-1</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico"> 
-        <meta charset="utf-8"> <!--Juego de caracteres-->
-        <meta name="Autor" content="Saori Nayelli Jasso Pelayo">
-        <meta name="Fecha" content="30 de abril de 2025">
-        <meta name="Descripción" content="Tablas de multiplicar con JavaScript">
-    <style>
-        .estiloTabla{
-            border: 1px solid #C5C5C5; border-collapse: collapse; width: 100%; 
-            width: 40%;
-            align-items: left;
-            font-family: Arial, sans-serif;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 | Actividad 03-1</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    <meta charset="utf-8"> <!--Juego de caracteres-->
+    <meta name="Autor" content="Saori Nayelli Jasso Pelayo">
+    <meta name="Fecha" content="29 de abril de 2025">
+    <meta name="Descripción" content="Alert, Confirm & Prompt">
+
+    <style type="text/css">
+        table{
+            border: 1px solid #C5C5C5; border-collapse: collapse; 
+            width: 50%; 
+            font-family: Arial, Helvetica, sans-serif
+        }
+        th,td{
             text-align: left;
+            padding: 10px;
         }
-        .estiloTabla th:nth-child(1),
-        .estiloTabla td:nth-child(1) {
-        width: 15%;
-        padding: 15px;
+        tr:nth-child(even){
+            background-color:#00D9FF ;
         }
-        .estiloTabla th:nth-child(2),
-        .estiloTabla td:nth-child(2) {
-        width: 35%;
+        tr:hover{
+            background-color:deeppink ;
         }
-        .estiloTabla th:nth-child(3),
-        .estiloTabla td:nth-child(3) {
-        width: 50%;
-        }
-        .estiloTabla tr:nth-child(odd){
-            background-color:skyblue ;
-        }
-        .estiloTabla tr:not(thead tr):nth-child(odd):hover{
-            background-color:magenta ;
-            transition: background-color 0.3s ease;
-            transform: scale(1.02);
-        }
-        .estiloTabla th{
-            font-weight: bold;
-            background-color:#ffffff ;
-        }
+
     </style>
-    </head>
+</head>
 
-    <body>
-        <!--Llenar el Título y pegar el contenido-->
-        <h1>Unidad 3 | Actividad 03 :: Tema (JavaScript Tablas de multiplicar)</h1>
-        <script>
-            let opc=0;
-            while(opc==0){
-                let input= window.prompt("Elige que tabla de multiplicar deseas realizar [1-10]");
-                opc=Number(input);
-                if(isNaN(opc) ||opc>10||opc<1){
-                    alert("Parece que ingresas numeros fuera de rango, intenta de nuevo");
-                opc=0;
-                }
-            }
-
-            document.write("<table class='estiloTabla'><thead>");
-            document.write("<tr><th>No.</th><th>Suma</th><th>Multiplica</th></tr>");
-            document.write("</thead><tbody>");
-            
-            for (let i = 1; i <= 10; i++) {
-                document.write("<tr>");
-                document.write("<td>"+(i)+"</td>"); // o podría ser (`<td>${i}</td>`)
-                document.write("<td>"+(opc)+" + " + (i) + " = "+ (opc+i)+"</td>"); //`<td>${opc} x ${i}</td>`
-                document.write("<td>"+(opc)+" x " + (i) + " = "+ (opc*i)+"</td>"); //`<td>${opc * i}</td>`
-                document.write("</tr>");
-            }
-        
-            document.write("</tbody></table>");
-            
-        </script>
-    </body>
-   
+<body>
+    <h1>Unidad 3 | Actividad 02 :: Tema (Alert, Confirm & Prompt)</h1>
+    <script>
+        let numTabla,numValores; 
+        do{
+            numTabla=window.prompt("¿Cuál tabla de multiplicar deseas realizar? [1-10]");
+            numTabla=Number(numTabla); //Convertir a número
+        }while(numTabla<1 || numTabla>10);
+        do{
+            numValores=window.prompt("¿Cuántos valores deseas mostrar? [10-100]");
+            numValores=Number(numValores); //Convertir a número
+        }while(numValores<10 || numValores>100);
+        let i; 
+        document.write("<table>");
+        document.write("<tr><th>No.</th><th>Suma</th><th>Multiplica</th></tr>");
+        for(i=1;i<=numValores;i++){
+            document.write("<tr><td>"+i+"</td><td>"+numTabla+" + "+i+" = "+(numTabla+i)+"</td><td>"+numTabla+" x "+i+" = "+(numTabla*i)+"</td></tr>");
+        }
+        document.write("</table>");
+    </script>
     
+</body>
 </html>
-
