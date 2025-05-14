@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 | Actividad 06</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    <meta charset="utf-8"> <!--Juego de caracteres-->
+    <meta name="Autor" content="Saori Nayelli Jasso Pelayo">
+    <meta name="Fecha" content="12 de mayo de 2025">
+    <meta name="Descripción" content="JavaScript">
+    
+    <script>
+        function funcionClick(){
+           document.getElementById("varParrafo").innerHTML += "Hola Mundo con Clicl!!!<br>"; 
+        }
+         function funcionDoble(){
+           document.getElementById("varParrafo").innerHTML += "Hola Mundo con DobleClick!!!<br>"; 
+        }
+        function funcionValidar(){
+            if(navigator.cookieEnabled==true){
+                alert("Bienvenido a mi sitio web!!!");
+            }
+        }
+        function funcionOver(obj){
+            obj.style.backgroundColor="navy";
+        }
+          function funcionOut(obj){
+            obj.style.backgroundColor="black";
+        }
+        function cambiarColor(color){
+           document.body.style.backgroundColor=color; 
+        }
+    </script>
+   
+   
+   <style>
+        p{
+            color: limegreen;
+            background-color: black;
+            border: crimson 2px dashed;
+        }
+    </style>
+
+</head>
+
+<body onload="funcionValidar()">
+    <h1 >Unidad 3 | Actividad 06 :: Tema (JavaScript -  Eventos)</h1>
+    <h3>Presiona el botón para ejecutar el código.</h3>
+    <button onclick="funcionClick()" ondblclick="funcionDoble()">Acción...</button>
+    <p id="varParrafo" onmouseover="funcionOver(this,'Navy')" onmouseout="funcionOut(this, 'Black')"></p>
+        <fieldset>
+            <legend>Elige un color fondo...</legend>
+            <button onclick="cambiarColor('SteelBlue')">Azul</button>
+            <button onclick="cambiarColor('Crimson')">Rojo</button>
+            <button onclick="cambiarColor('Green')">Verde</button>
+        </fieldset>
+
+
+
+</body>
+</html>
